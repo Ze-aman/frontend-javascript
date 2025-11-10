@@ -5,8 +5,9 @@ namespace Subjects {
     teacher!: Teacher;
 
     /* Setter method for teacher */
-    setTeacher(teacher: Teacher) {
+    setTeacher(teacher:Teacher) {
       this.teacher = teacher;
     }
   }
 }
+
