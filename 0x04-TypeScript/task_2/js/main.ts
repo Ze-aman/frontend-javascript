@@ -6,7 +6,7 @@ interface Teacher {
   workTeacherTasks(): string;
 }
 
-function createEmployee(salary: number | string): Director | Teacher {
+export function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === 'number' && salary < 500) {
     return {
       workTeacherTasks: () => 'Getting to work'
@@ -18,11 +18,11 @@ function createEmployee(salary: number | string): Director | Teacher {
   }
 }
 
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
@@ -30,5 +30,6 @@ function executeWork(employee: Director | Teacher): string {
   }
 }
 
-console.log(executeWork(createEmployee(200)));
-console.log(executeWork(createEmployee(1000)));
+/* Example usage */
+console.log(executeWork(createEmployee(200)));  // Getting to work
+console.log(executeWork(createEmployee(1000))); // Getting to director tasks
