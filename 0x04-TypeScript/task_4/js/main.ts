@@ -4,7 +4,8 @@
 /// <reference path="./subjects/Java.ts" />
 /// <reference path="./subjects/React.ts" />
 
-const cpp = new Subjects.Cpp();
+
+const cpp = new Cpp()
 const java = new Subjects.Java();
 const react = new Subjects.React();
 
